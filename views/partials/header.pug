@@ -1,0 +1,33 @@
+link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+div(id="header" class="navbar-fixed")
+
+	nav(class="nav-wrapper grey darken-3")
+		div(class="container")
+			a(href="/" class="brand-logo") BestBooks
+			
+			ul(class="right nav-items")
+			
+				if s.array[0] && s.array[0].registered
+					ul(class="right hide-on-med-and-down")
+							
+						li
+							a(href="/trackOrders") Track you Orders
+							
+						li
+							a(href="/logoutUser/' + s.array[0].user_id" method="post") Logout/Unregister
+						li
+							if cart.list[0]
+								a(href="/displayShoppingCart") Show Cart
+							
+						li
+							label(class="btn btn-floating pink lighten-2 black-text") #{s.array[0].name[0]}		
+				else
+					ul(class="right")
+						li
+							a(href="/createUser") Create User
+						li
+							a(href="/loginForm") Login
+					
+
+				 

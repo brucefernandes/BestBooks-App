@@ -1,0 +1,22 @@
+html
+	head
+		title BestBooks
+		include ../partials/header
+	body
+		
+		div(class="container")
+			
+			form(method='POST' action='/loginUser' class="white")
+				h5 Log In: 
+				div(class="input-field")
+					label(htmlFor='username')
+					input#username(type='text', placeholder='Username' name='username')
+			
+				button(type='submit' class="btn pink waves-effect waves-light") Sign In
+					i( class="material-icons right") send
+			
+
+
+
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+		script(src="/js/default.js")

@@ -1,0 +1,21 @@
+html
+	head
+		title BestBooks
+
+	body
+		include ../partials/header
+
+		if s.array[0] && s.array[0].registered	&& cart.list[0]
+			h1 Your cart: - 
+			div(id="cart")
+				each item in cart.list
+					li !{item.title} for !{item.price} dollars
+					
+			br
+			form(action="/sendOrder/" method="post")
+				button(type="submit") Order Now
+			
+
+		else
+			p Login to view this page
+		script(src="/js/default.js")

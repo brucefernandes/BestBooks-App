@@ -1,0 +1,32 @@
+html
+	head
+		title BestBooks
+
+	body
+		include ../partials/header
+
+		if o
+			h4(class="center") Your Orders :
+				h6(class="center") Click on the tracking number to track you order
+				
+				div(id="orders" class="center container")
+					table(class="striped")
+						thead
+							tr
+								th Tracking No.
+								th Title
+								
+			
+						tbody
+							each item in o	
+								tr
+									td
+										a(href="http://localhost:3000/trackOrders/" + item.tracking_no target="_blank" class="pink-text")
+											|!{item.tracking_no}
+									td
+										|!{item.title}	
+									
+		else
+			h4(class="red-text") You have no orders to track
+			
+		script(src="/js/default.js")

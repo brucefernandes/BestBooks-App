@@ -1,0 +1,26 @@
+html
+	head
+		title BestBooks
+
+	body
+		include ../partials/header
+
+		if s.array[0] && s.array[0].registered	
+			h1 !{t[0].title} :
+			
+			p  order number  : 
+				label !{t[0].order_no}
+				
+			p  location : 
+				label !{t[0].location}
+			p  day : 
+				label !{t[0].day}
+			p  month : 
+				label !{t[0].month}
+			br
+			a(href="http://localhost:3000/trackOrders") Back 
+			
+
+		else
+			p Login to view this page
+		script(src="/js/default.js")

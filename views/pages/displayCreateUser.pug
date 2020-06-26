@@ -1,0 +1,48 @@
+html
+	head
+		title BestBooks
+
+	body
+		include ../partials/header
+		div(class='container')
+			
+			form(method='POST' action='/addUser')
+				h4(class='grey-text text-darken-3') Create your profile: 
+				
+				div(id="form-group" class="input-field")
+					label(for='name') Name:
+					input#name(type='text',  name='name')
+				
+				div(id="form-group" class="input-field")
+					label(for='street') Street:
+					input#street(type='text',  name='street')
+				
+				div(id="form-group" class="input-field")
+					label(for='apt_no') Apt. Number (3 digits):
+					input#apt_no(type='text',  name='apt_no' maxlength="3")
+				
+				div(id="form-group" class="input-field")
+					label(for='city') City:
+					input#city(type='text' name="city")
+				
+				div(id="form-group" class="input-field")
+					label(for='bank_name') Bank Name:
+					input#bank_name(type='text' name='bank_name')
+				
+				div(id="form-group" class="input-field")
+					label(for='card_no') Credit Card Number:
+					input#card_no(type='text' name='card_name' maxlength="9")
+				
+				div(class="input-field")
+					button(class="btn pink lighten-1 z-depth-0" type='submit') Sign up
+							i( class="material-icons right") check
+				
+
+
+
+
+
+
+
+		script(src="/js/default.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")

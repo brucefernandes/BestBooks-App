@@ -1,0 +1,28 @@
+html
+	head
+		title BestBooks
+		include ../partials/header
+	body
+		if s.array[0] && s.array[0].registered	
+				
+			h3 !{b[0].title} :
+			
+			p  ISBN : 
+				label !{b[0].isbn}
+				
+			p  Genre : 
+				label !{b[0].genre}
+			p  Author : 
+				label !{b[0].author}
+			p  Price : 
+				label !{b[0].price}
+			p  Stock Available : 
+				label !{b[0].quantity}
+
+			form(action="/addToCart/" + b[0].isbn, method="post")
+				button(type="submit") Add to Cart
+			
+
+		else
+			p Login to view this page
+		script(src="/js/default.js")
